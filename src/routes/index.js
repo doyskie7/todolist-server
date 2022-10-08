@@ -18,16 +18,16 @@ export const Start = (port) =>{
     app.use(cors());
 
     
-    app.post('/api/signin-user',SignUp)
-    app.post('/api/login-user',Login)
-    app.post('/api/logout-user',VerifyToken)
-    app.post('/api/check-auth',TokenChecker,VerifyToken)
+    app.post('/api/v1/signin-user',SignUp)
+    app.post('/api/v1/login-user',Login)
+    app.post('/api/v1/logout-user',VerifyToken)
+    app.post('/api/v1/check-auth',TokenChecker,VerifyToken)
 
 
-    app.post('/api/create-todo',TokenChecker,CreateToDo)
-    app.post('/api/fetch-todo',TokenChecker,GetAllToDo)
-    app.post('/api/update-todo',TokenChecker,UpdateToDo)
-    app.post('/api/delete-todo',TokenChecker,DeleteToDo)
+    app.post('/api/v1/create-todo',TokenChecker,CreateToDo)
+    app.post('/api/v1/fetch-todo',TokenChecker,GetAllToDo)
+    app.post('/api/v1/update-todo',TokenChecker,UpdateToDo)
+    app.post('/api/v1/delete-todo',TokenChecker,DeleteToDo)
 
 
     app.listen(port)

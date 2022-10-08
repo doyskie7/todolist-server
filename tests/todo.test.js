@@ -4,10 +4,10 @@ import { GenerateTestToken } from '../src/utils/Authenticate';
 var randomstring = require("randomstring");
 const APP = Start(4001)
 
-describe('Should create Todo List ==> /api/create-todo', function() {
+describe('Should create Todo List ==> /api/v1/create-todo', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/create-todo')
+        .post('/api/v1/create-todo')
         .send({
             name:randomstring.generate(),
             status:randomstring.generate(),
@@ -21,10 +21,10 @@ describe('Should create Todo List ==> /api/create-todo', function() {
 });
 
 
-describe('Should fetch Todo List ==> /api/fetch-todo', function() {
+describe('Should fetch Todo List ==> /api/v1/fetch-todo', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/fetch-todo')
+        .post('/api/v1/fetch-todo')
         .set('x-access-token', GenerateTestToken())
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
@@ -33,10 +33,10 @@ describe('Should fetch Todo List ==> /api/fetch-todo', function() {
 });
 
 
-describe('Should update Todo List ==> /api/update-todo', function() {
+describe('Should update Todo List ==> /api/v1/update-todo', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/update-todo')
+        .post('/api/v1/update-todo')
         .send({
             name:randomstring.generate(),
             status:randomstring.generate(),
@@ -49,10 +49,10 @@ describe('Should update Todo List ==> /api/update-todo', function() {
     });
 });
 
-describe('Should delete Todo List ==> /api/delete-todo', function() {
+describe('Should delete Todo List ==> /api/v1/delete-todo', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/delete-todo')
+        .post('/api/v1/delete-todo')
         .send({
             id:261,
             todo:"",

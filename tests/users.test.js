@@ -3,10 +3,10 @@ import { Start } from '../src/routes';
 const APP = Start(4000)
 
 
-describe('Should create User account at ==> /api/signin-user', function() {
+describe('Should create User account at ==> /api/v1/signin-user', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/signin-user')
+        .post('/api/v1/signin-user')
         .send({
                 name:"Eveguel Butal Arocha",
                 email:"eveguelfreelancers@gmail.com",
@@ -20,10 +20,10 @@ describe('Should create User account at ==> /api/signin-user', function() {
 });
 
 
-describe('Should Login User account at ==> /api/login-user', function() {
+describe('Should Login User account at ==> /api/v1/login-user', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/login-user')
+        .post('/api/v1/login-user')
         .send({
             email:"eveguelfreelancer@gmail.com",
             password:"321456"
@@ -35,10 +35,10 @@ describe('Should Login User account at ==> /api/login-user', function() {
 });
 
 
-describe('Should Logout User account at ==> /api/logout-user', function() {
+describe('Should Logout User account at ==> /api/v1/logout-user', function() {
     it('responds with json', function(done) {
       request(APP)
-        .post('/api/logout-user')
+        .post('/api/v1/logout-user')
         .send({
             email:"eveguelfreelancer@gmail.com",
             password:"321456"
